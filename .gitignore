@@ -2,5 +2,3 @@ node_modules
 
 # built
 assets/built
-/sw.js
-bitsofcode-ghost.zip
