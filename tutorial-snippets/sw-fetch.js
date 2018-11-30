@@ -15,13 +15,11 @@ self.addEventListener('fetch', (e) => {
             console.log("[ServiceWorker] Found in cache", e.request.url);
             return response;
           }
+
+          const isHTMLPage = e.request.method === "GET" && e.request.headers.get("accept").includes("text/html");
+          if (isHTMLPage) return caches.match("/offline/");
   
-          return fetch(e.request)
-            .then((fetchResponse) => fetchResponse)
-            .catch((err) => {
-              const isHTMLPage = e.request.method === "GET" && e.request.headers.get("accept").includes("text/html");
-              if (isHTMLPage) return caches.match("/offline/");
-            })
+          return fetch(e.request);
   
         }) // end caches.match(e.request)
     ); // end e.respondWith
