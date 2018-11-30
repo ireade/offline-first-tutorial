@@ -1,0 +1,17 @@
+<article class="excerpt m-b-md p-b-md">
+    <header class="excerpt__header m-b-sm">
+        <h2 class="excerpt__title h2 no-ul">
+            <a href="{{ url }}">{{ title }}</a>
+        </h2>
+        <div class="post__meta">
+            <em>{{ date }}</em>
+            {{#if tags}}
+                <em>{{tags}}</em>
+            {{/if}}
+        </div>
+    </header>
+
+    <div class="excerpt__body">
+        {{ excerpt words="50" }}...
+    </div>
+</article>

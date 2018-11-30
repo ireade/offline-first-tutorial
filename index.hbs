@@ -1,0 +1,13 @@
+{{!< default}}
+
+<section>
+    <h1 class="sr-only">Latest Posts</h1>
+    {{#foreach posts}}
+        {{> post-excerpt}}
+    {{/foreach}}
+
+    {{> subscribe}}
+
+    {{pagination}}
+</section>
+

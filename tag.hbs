@@ -1,0 +1,15 @@
+{{!< default}}
+
+<article class="post">
+    <header class="post__header m-b-lg">
+        <h1 class="post__title h1">Posts in category: "{{tag.name}}"</h1>
+    </header>
+
+    {{#foreach posts}}
+        {{> post-excerpt}}
+    {{/foreach}}
+
+    {{> subscribe}}
+
+    {{pagination}}
+</article>

@@ -1,0 +1,28 @@
+<section class="post__suggestions m-b-md">
+    <h2 class="sr-only">More Posts</h2>
+
+    {{#prev_post}}
+    <article class="post__suggestion">
+        <h3 class="h3 no-ul">
+            <a href="{{url}}">
+                <span>&#8592;</span><br>
+                {{title}}
+            </a>
+        </h3>
+        <p class="post__meta">{{#if tags}}<em>{{tags}}</em>{{/if}}</p>
+    </article>
+    {{/prev_post}}
+
+    {{#next_post}}
+        <article class="post__suggestion">
+            <h3 class="h3 no-ul">
+                <a href="{{url}}">
+                    <span>&#8594;</span><br>
+                    {{title}}
+                </a>
+            </h3>
+            <p class="post__meta">{{#if tags}}<em>{{tags}}</em>{{/if}}</p>
+        </article>
+    {{/next_post}}
+
+</section>

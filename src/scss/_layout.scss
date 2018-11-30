@@ -1,0 +1,321 @@
+
+body {
+    background: $colour-bg;
+    border: 3px solid $colour-theme;
+    min-height: 100vh
+}
+
+@media screen and (min-width:400px) {
+    body {
+        border: 5px solid $colour-theme
+    }
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wrapper--flex {
+    display: flex;
+    min-height: 100%
+}
+
+.site__header {
+    height: 60px;
+    border-bottom: 2px solid $colour-border;
+    margin-bottom: 40px
+}
+
+@media screen and (min-width:500px) {
+    .site__header {
+        margin-bottom: 70px
+    }
+}
+
+.site__header .wrapper--flex {
+    justify-content: space-between;
+    align-items: center
+}
+
+.site__title a {
+    outline: 0
+}
+
+.no-btn {
+    border: 0;
+    background: 0 0;
+    font-family: $font-family;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: auto
+}
+
+.site__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 30px
+}
+
+.site__nav li {
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 10px
+}
+
+.site__nav li a {
+    text-decoration: none;
+    outline: 0
+}
+
+.site__nav li a:focus,
+.site__nav li a:hover {
+    color: $colour-theme
+}
+
+.site__nav li a[href*="patreon.com"] {
+    position: relative
+}
+
+.site__nav li a[href*="patreon.com"]:after {
+    content: "↗";
+    position: absolute;
+    right: -25px;
+    top: 7px;
+    font-size: 2rem;
+    line-height: 1
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li {
+    animation-name: navItemFadeIn;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-direction: normal
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(2) {
+    animation-delay: .2s
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(3) {
+    animation-delay: .4s
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(4) {
+    animation-delay: .6s
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(5) {
+    animation-delay: .8s
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(6) {
+    animation-delay: 1s
+}
+
+.dialog:not([aria-hidden=true]) .site__nav li:nth-child(7) {
+    animation-delay: 1.2s
+}
+
+@keyframes navItemFadeIn {
+    from {
+        transform: translateY(0);
+        opacity: 0
+    }
+    to {
+        transform: translateY(-10px);
+        opacity: 1
+    }
+}
+
+.site__footer {
+    border-top: 2px solid #e6e6e6;
+    text-align: center
+}
+
+.site__footer__nav ul {
+    text-align: center
+}
+
+.site__footer__nav li {
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.site__footer__nav li:not(:last-child):after {
+    content: "";
+    height: 5px;
+    width: 5px;
+    background: #3c3c3c;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    top: 8px
+}
+
+.site__footer__nav a {
+    font-weight: 600
+}
+
+.site__footer__nav a[href*="patreon.com"] {
+    background: $colour-theme
+}
+
+.site__body {
+    margin-bottom: 50px
+}
+
+.site__body .wrapper--flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.site__main {
+    width: 100%;
+    min-height: calc(100vh - 350px);
+    margin-bottom: 30px
+}
+
+@media screen and (min-width:850px) {
+    .site__main {
+        width: 65%
+    }
+}
+
+.site__sidebar {
+    width: 100%
+}
+
+@media screen and (min-width:850px) {
+    .site__sidebar {
+        width: 30%
+    }
+}
+
+#logo {
+    height: 16px;
+    width: auto;
+    overflow: visible
+}
+
+.site__title a:focus .logo-section-left,
+.site__title a:focus .logo-section-middle,
+.site__title a:focus .logo-section-right,
+.site__title a:hover .logo-section-left,
+.site__title a:hover .logo-section-middle,
+.site__title a:hover .logo-section-right {
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite
+}
+
+.site__title a:focus .logo-section-left,
+.site__title a:hover .logo-section-left {
+    animation-name: logoSectionLeft
+}
+
+.site__title a:focus .logo-section-middle,
+.site__title a:hover .logo-section-middle {
+    animation-name: logoSectionMiddle
+}
+
+.site__title a:focus .logo-section-right,
+.site__title a:hover .logo-section-right {
+    animation-name: logoSectionRight
+}
+
+@keyframes logoSectionLeft {
+    0% {
+        transform: none
+    }
+    12.5% {
+        transform: translateX(-15px)
+    }
+    25%,
+    50% {
+        transform: none
+    }
+    62.5% {
+        transform: translateX(-15px)
+    }
+    67%,
+    72% {
+        transform: translateX(-15px) rotate(-10deg)
+    }
+    82% {
+        transform: translateX(-15px) rotate(-15deg)
+    }
+    87.5% {
+        transform: translateX(-15px)
+    }
+    100% {
+        transform: none
+    }
+}
+
+@keyframes logoSectionMiddle {
+    0% {
+        transform: none
+    }
+    12.5% {
+        transform: translateX(-15px)
+    }
+    25% {
+        transform: none
+    }
+    37.5% {
+        transform: translateX(15px)
+    }
+    50%,
+    62.5% {
+        transform: none
+    }
+    67%,
+    72% {
+        transform: rotate(7deg)
+    }
+    82% {
+        transform: rotate(12deg)
+    }
+    100%,
+    87.5% {
+        transform: none
+    }
+}
+
+@keyframes logoSectionRight {
+    0%,
+    25% {
+        transform: none
+    }
+    37.5% {
+        transform: translateX(15px)
+    }
+    50% {
+        transform: none
+    }
+    62.5% {
+        transform: translateX(15px)
+    }
+    67%,
+    72% {
+        transform: translateX(15px) rotate(-7deg)
+    }
+    82% {
+        transform: translateX(15px) rotate(-12deg)
+    }
+    87.5% {
+        transform: translateX(15px)
+    }
+    100% {
+        transform: none
+    }
+}

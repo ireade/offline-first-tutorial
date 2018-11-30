@@ -1,0 +1,234 @@
+
+code[class*=language-],
+pre,
+pre[class*=language-] {
+    color: #fff;
+    background: 0 0;
+    font-family: $font-family-monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    font-size: 1.5rem
+}
+
+:not(pre)>code[class*=language-],
+pre,
+pre[class*=language-] {
+    background: #3c3c3c
+}
+
+pre,
+pre[class*=language-] {
+    overflow: auto;
+    border: 0;
+    border-radius: 3px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem
+}
+
+pre[class*=language-]::-moz-selection {
+    background: #27292a
+}
+
+pre[class*=language-]::selection {
+    background: #27292a
+}
+
+code[class*=language-]::-moz-selection,
+code[class*=language-]::-moz-selection,
+pre[class*=language-]::-moz-selection,
+pre[class*=language-]::-moz-selection {
+    text-shadow: none;
+    background: rgba(237, 237, 237, .15)
+}
+
+code[class*=language-]::selection,
+code[class*=language-]::selection,
+pre[class*=language-]::selection,
+pre[class*=language-]::selection {
+    text-shadow: none;
+    background: rgba(237, 237, 237, .15)
+}
+
+:not(pre)>code[class*=language-] {
+    border-radius: .3em;
+    border: .13em solid #545454;
+    box-shadow: 1px 1px .3em -.1em #000 inset;
+    padding: .15em .2em .05em;
+    white-space: normal
+}
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+    color: #787878
+}
+
+.token.punctuation {
+    opacity: .7
+}
+
+.namespace {
+    opacity: .7
+}
+
+.token.boolean,
+.token.deleted,
+.token.number {
+    color: #67b3dd
+}
+
+.token.builtin,
+.token.constant,
+.token.keyword,
+.token.selector,
+.token.symbol,
+.token.tag {
+    color: $colour-theme
+}
+
+.language-css .token.string,
+.style .token.string,
+.token.char,
+.token.entity,
+.token.inserted,
+.token.operator,
+.token.url,
+.token.variable {
+    color: #919e6b;
+    color: #67b3dd
+}
+
+.token.attr-name,
+.token.attr-value,
+.token.function,
+.token.property {
+    color: #fd3b56;
+    color: #f28596
+}
+
+.token.atrule {
+    color: #7386a5
+}
+
+.token.important,
+.token.regex {
+    color: #e9c163
+}
+
+.token.bold,
+.token.important {
+    font-weight: 700
+}
+
+.token.italic {
+    font-style: italic
+}
+
+.token.entity {
+    cursor: help
+}
+
+pre[data-line] {
+    padding: 1em 0 1em 3em;
+    position: relative
+}
+
+.token {
+    position: relative;
+    z-index: 1
+}
+
+.line-highlight {
+    background: rgba(84, 84, 84, .25);
+    background: linear-gradient(to right, rgba(84, 84, 84, .1) 70%, rgba(84, 84, 84, 0));
+    border-bottom: 1px dashed #545454;
+    border-top: 1px dashed #545454;
+    left: 0;
+    line-height: inherit;
+    margin-top: .75em;
+    padding: inherit 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    white-space: pre;
+    z-index: 0
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+    background-color: #8794a6;
+    border-radius: 999px;
+    box-shadow: 0 1px #fff;
+    color: #f5f2f0;
+    content: attr(data-start);
+    font: 700 65%/1.5 sans-serif;
+    left: .6em;
+    min-width: 1em;
+    padding: 0 .5em;
+    position: absolute;
+    text-align: center;
+    text-shadow: none;
+    top: .4em;
+    vertical-align: .3em
+}
+
+.line-highlight[data-end]:after {
+    bottom: .4em;
+    content: attr(data-end);
+    top: auto
+}
+
+pre[data-line] {
+    position: relative;
+    padding: 1em 0 1em 3em
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em;
+    background: rgba(153, 122, 102, .08);
+    background: linear-gradient(to right, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+    content: attr(data-start);
+    position: absolute;
+    top: .4em;
+    left: .6em;
+    min-width: 1em;
+    padding: 0 .5em;
+    background-color: rgba(153, 122, 102, .4);
+    color: #f5f2f0;
+    font: 700 65%/1.5 sans-serif;
+    text-align: center;
+    vertical-align: .3em;
+    border-radius: 999px;
+    text-shadow: none;
+    box-shadow: 0 1px #fff
+}
+
+.line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: .4em
+}

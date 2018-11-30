@@ -1,0 +1,22 @@
+<ul class="post__share">
+    <li class="m-r-sm">
+        <a href="https://twitter.com/intent/tweet/?text='{{title}}'%20from%20bitsofco.de&url={{@blog.url}}{{url}}&via=ireaderinokun" target="_blank" class="post__share__item">
+            <span class="sr-only">Share the Article on Twitter</span>
+            {{> icon-twitter}}
+        </a>
+    </li>
+
+    <li class="m-r-sm">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{@blog.url}}{{url}}" target="_blank" class="post__share__item">
+            <span class="sr-only">Share the Article on Facebook</span>
+            {{> icon-facebook}}
+        </a>
+    </li>
+
+    <li>
+        <a href="https://www.reddit.com/submit?url={{@blog.url}}{{url}}" target="_blank" class="post__share__item">
+            <span class="sr-only">Post the Article to Reddit</span>
+            {{> icon-reddit}}
+        </a>
+    </li>
+</ul>

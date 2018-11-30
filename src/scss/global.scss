@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+@import "reset";
+@import "variables";
+@import "typography";
+@import "utils";
+@import "layout";
+@import "post";
+@import "ads";
+@import "syntax-highlighting";
+@import "subscribe";
+
+
+.social ul {
+    display: flex;
+    justify-content: center
+}
+
+.social ul li {
+    margin-left: 7px;
+    margin-right: 7px
+}
+
+.social ul li svg {
+    height: 15px;
+    width: auto
+}
+
+.dialog-overlay {
+    z-index: 15;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .9)
+}
+
+.dialog {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.dialog-overlay[aria-hidden=true],
+.dialog[aria-hidden=true] {
+    display: none
+}
+
+.search-form {
+    display: block
+}
+
+.search-form__input {
+    height: 40px;
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    border: 0;
+    border-radius: 3px;
+    border: 2px solid #e6e6e6;
+    font-family: $font-family;
+    font-size: 1.5rem;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+.message--count {
+    display: block
+}
+
+.message--count span {
+    font-weight: 600
+}
+
+// Koening things ghost requires
+
+.kg-width-wide img {
+    max-width: 85vw;
+}
+
+.kg-width-full img {
+    max-width: 100vw;
+}
+
+.kg-width-wide {
+position: relative;
+width: 85vw;
+min-width: 100%;
+margin: auto calc(50% - 50vw);
+transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+position: relative;
+width: 100vw;
+left: 50%;
+right: 50%;
+margin-left: -50vw;
+margin-right: -50vw;
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1040px;
+    width: 100vw;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+

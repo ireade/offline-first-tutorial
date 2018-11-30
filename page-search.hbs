@@ -1,0 +1,25 @@
+{{!< default}}
+{{#post}}
+    <article class="post">
+        <header class="post__header m-b-lg">
+            <h1 class="post__title h1">Search</h1>
+        </header>
+
+        <div class="post__content page__content m-b-lg">
+
+            <noscript>
+                <p class="fs-i"><strong>Unfortunately</strong>, search on this blog's host requires JavaScript to be enabled.</p>
+                <br>
+            </noscript>
+
+            <form class="search-form m-b-md" id="search-form" action="/search" method="get">
+                <label for="search-form__input" class="sr-only">Search Term</label>
+                <input type="search" class="search-form__input" id="search-form__input" name="q" placeholder="What are you looking for?">
+            </form>
+
+            <section id="search-results">
+            </section>
+        </div>
+
+    </article>
+{{/post}}

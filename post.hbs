@@ -1,0 +1,35 @@
+{{!< default}}
+{{#post}}
+<article class="post post-full {{post_class}}">
+    <header class="post__header m-b-lg">
+        <h1 class="post__title h1">{{title}}</h1>
+        <div class="post__meta">
+            <button hidden type="button" id="save">
+                <span class="icon" aria-hidden="true">{{> icon-bookmark}}</span>
+                <span class="label">Save Article for Offline</span>
+            </button>
+            <em class="post__meta__date">{{ date }}</em>
+            {{#if tags}}
+                <em class="post__meta__tags">{{tags}}</em>
+            {{/if}}
+        </div>
+    </header>
+
+    <div class="post__content p-b-xlg m-b-lg">
+        {{ content }}
+    </div>
+
+    <footer class="post__footer p-b-md m-b-lg">
+        {{> post-share}}
+        {{> subscribe}}
+        {{> post-suggestions}}
+    </footer>
+
+    {{> disqus}}
+
+</article>
+
+<script src="{{asset "built/post.js"}}" class="versionedAsset"></script>
+<script>!function (d, s, id) {var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+if (!d.getElementById(id)) {js = d.createElement(s);js.id = id;js.src = p + '://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);}}(document, 'script', 'twitter-wjs');</script>
+{{/post}}

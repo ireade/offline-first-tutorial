@@ -1,0 +1,84 @@
+{{#post}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width initial-scale=1">
+
+    <link rel="icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/assets/built/offline.css">
+
+    <link rel="manifest" href="{{asset "manifest.json"}}">
+    <meta name="theme-color" content="#ffdb3a">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset "icons/icon_32.png"}}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{asset "icons/icon_48.png"}}">
+    <link rel="icon" type="image/png" sizes="128x128" href="{{asset "icons/icon_128.png"}}">
+    <link rel="icon" type="image/png" sizes="256x256" href="{{asset "icons/icon_256.png"}}">
+
+    <meta name="apple-mobile-web-app-title" content="bitsofcode">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset "icons/icon_152.png"}}">
+
+    <meta name="msapplication-TileColor" content="#ffdb3a">
+    <meta name="msapplication-TileImage" content="{{asset "icons/icon_144.png"}}">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="{{asset "icons/icon_128.png"}}">
+    <meta property="og:site_name" content="bitsofcode">
+    <meta property="og:url" content="https://bitsofco.de">
+</head>
+<body>
+
+    <header class="site__header">
+        <div class="wrapper wrapper--flex">
+            <h1 class="site__title">
+                <a href="/" class="no-ul">
+                    <span class="sr-only">bitsofcode</span>
+                    {{> bitsofcode-logo }}
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site__body">
+        <div class="wrapper wrapper--flex">
+            <main class="site__main">
+                <article class="post">
+                    <header class="post__header m-b-md">
+                        <h1 class="post__title h1">{{title}}</h1>
+                    </header>
+
+                    <div class="post__content page__content m-b-lg">
+                        {{ content }}
+
+                        <div id="saved-articles">
+                            <p>Checking for saved articles...</p>
+                        </div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const savedArticles = document.getElementById("saved-articles");
+        const articles = JSON.parse(localStorage.getItem("articles") || "[]");
+
+        if (articles.length === 0) {
+            savedArticles.innerHTML = "<p><strong>No articles found 😭</strong></p>"
+        } else {
+            savedArticles.innerHTML = `
+            <h2>${articles.length} offline articles</h2>
+            <ul>
+                ${articles.map((article) => `<li><a href="${article.path}">${article.title}</a></li>`)}
+            </ul>
+            `;
+        }
+    </script>
+</body>
+</html>
+{{/post}}
