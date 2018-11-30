@@ -1,12 +1,3 @@
-/* **********************
- * 
- * TODO
- *  : display save article button
- *  : add/remove articles from "article-cache"
- *  : see tutorial-snippets/sw.js
- * 
- ********************** */
-
 const precacheVersion = 1;
 const precacheName = 'precache-v' + precacheVersion;
 const precacheFiles = [];
