@@ -12,6 +12,10 @@
                  *  : see tutorial-snippets/save-button.html
                  * 
                  *********************** -->
+            <button hidden type="button" id="save">
+                <span class="icon" aria-hidden="true">{{> icon-bookmark}}</span>
+                <span class="label">Save Article for Offline</span>
+            </button>
 
             <em class="post__meta__date">{{ date }}</em>
             {{#if tags}}
