@@ -5,6 +5,5 @@
  *  
  *  : serve cached article pages when offline
  *  : redirect to /offline/ for non-cached pages
- *  : see tutorial-snippets/sw-fetch.js
  * 
  ********************** */
