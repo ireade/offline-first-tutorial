@@ -70,6 +70,24 @@
          *  : add inline script to get saved articles
          * 
          *********************** -->
+    <script>
+        const savedArticles = document.getElementById("saved-articles");
+
+        caches.open("articles-cache").then((cache) => {
+            cache.keys().then((response) => {
+                if (response.length == 0) return savedArticles.innerHTML("<p>No articles were found :(</p>");
+
+                const template = `
+                <h2>${response.length} saved articles</h2>
+                <ul>
+                    ${response.map((article) => `<li><a href="${article.url}">${article.url}</a></li>`)}
+                </ul>
+                `;
+
+                savedArticles.innerHTML = template;
+            });
+        });
+    </script>
 </body>
 </html>
 {{/post}}
