@@ -13,25 +13,28 @@ if ('serviceWorker' in navigator && 'caches' in window) {
 
     const saveArticleButton = document.getElementById("save");
     const articlePath = window.location.pathname;
+    const cacheName = "article-" + articlePath.replace(/\//g, "");
 
     saveArticleButton.removeAttribute("hidden");
 
     function checkIfArticleIsInCache() {
-        return caches.open("articles-cache").then((cache) => {
-            return cache.match(articlePath).then((match) => match ? true : false);
-        });
+        return caches.keys().then((keys) => keys.includes(cacheName));
     }
 
     function saveArticleToCache() {
-        return caches.open("articles-cache").then((cache) => {
-            return cache.add(articlePath);
+        return caches.open(cacheName).then((cache) => {
+            const version = document.querySelector(".versionedAsset").href.split("?v=")[1];
+            const assets = [
+                `/assets/built/global.css?v=${version}`,
+                `/assets/built/global.js?v=${version}`,
+                `/assets/built/post.js?v=${version}`
+            ];
+            return cache.addAll([articlePath, ...assets]);
         });
     }
 
     function removeArticleFromCache() {
-        return caches.open("articles-cache").then((cache) => {
-            return cache.delete(articlePath);
-        });
+        return caches.delete(cacheName);
     }
 
     function updateButton(isCached) {
