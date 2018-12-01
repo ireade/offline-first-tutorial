@@ -1,8 +1,11 @@
 /* **********************
  * 
- * TODO (part 6?)
- *  : create 
- *  : see tutorial-snippets/save-article-2.js
+ * TODO
+ *  : display saveArticleButton
+ *  : save article to cache
+ *  : update button
+ *  : check if article is in cache
+ *  : remove article from cache
  * 
  ********************** */
 
