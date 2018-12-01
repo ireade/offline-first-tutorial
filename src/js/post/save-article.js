@@ -14,6 +14,10 @@ if ('serviceWorker' in navigator && 'caches' in window) {
     const saveArticleButton = document.getElementById("save");
     const articlePath = window.location.pathname;
     const cacheName = "article-" + articlePath.replace(/\//g, "");
+    const article = {
+        path: articlePath,
+        title: document.querySelector(".post__title").textContent
+    };
 
     saveArticleButton.removeAttribute("hidden");
 
@@ -33,34 +37,53 @@ if ('serviceWorker' in navigator && 'caches' in window) {
         });
     }
 
+    function saveArticleToLocalStorage() {
+        const articles = JSON.parse(localStorage.getItem("articles") || "[]");
+
+        articles.push(article);
+
+        localStorage.setItem("articles", JSON.stringify(articles));
+
+        return Promise.resolve();
+    }
+
     function removeArticleFromCache() {
         return caches.delete(cacheName);
     }
 
-    function updateButton(isCached) {
-        saveArticleButton.querySelector('.label').textContent = isCached ? "Saved! Click to remove article" : "Save article for offline";
+    function removeArticleFromLocalStorage() {
+        let articles = JSON.parse(localStorage.getItem("articles") || "[]");
 
-        if (isCached) saveArticleButton.classList.add("saved");
-        else saveArticleButton.classList.remove("saved");
+        articles = articles.filter((a) => {
+            if (a.path !== article.path) return a;
+        });
+
+        localStorage.setItem("articles", JSON.stringify(articles));
+
+        return Promise.resolve();
     }
 
+    function updateButton(isCached) {
+        saveArticleButton.querySelector('.label').textContent = isCached ? "Saved! Click to remove article" : "Save Article for Offline";
 
-    checkIfArticleIsInCache().then(updateButton);
+        if (isCached) saveArticleButton.classList.add('saved');
+        else saveArticleButton.classList.remove('saved');
+    }
 
-    saveArticleButton.addEventListener("click", () => {
-    
+    saveArticleButton.addEventListener("click", (e) => {
         checkIfArticleIsInCache()
             .then((isCached) => {
                 if (isCached) {
-                    removeArticleFromCache().then(() => updateButton(false));
+                    removeArticleFromCache()
+                        .then(() => removeArticleFromLocalStorage())
+                        .then(() => updateButton(false));
                 } else {
-                    saveArticleToCache().then(() => updateButton(true));
-                }
-            })
-
+                    saveArticleToCache()
+                        .then(() => saveArticleToLocalStorage())
+                        .then(() => updateButton(true));
+                };
+            });
     });
 
-
-
-
+    checkIfArticleIsInCache().then(updateButton);
 }

@@ -72,28 +72,18 @@
          *********************** -->
     <script>
         const savedArticles = document.getElementById("saved-articles");
+        const articles = JSON.parse(localStorage.getItem("articles") || "[]");
 
-        caches.keys().then((keys) => {
-
-            const articles = [];
-
-            keys.forEach((key) => {
-                if (key.includes("article-")) articles.push(key.split("article-")[1]);
-            })
-
-            if (articles.length == 0) return savedArticles.innerHTML("<p>No articles were found :(</p>");
-
-            const template = `
-            <h2>${articles.length} saved articles</h2>
+        if (articles.length === 0) {
+            savedArticles.innerHTML = "<p><strong>No articles found 😭</strong></p>"
+        } else {
+            savedArticles.innerHTML = `
+            <h2>${articles.length} offline articles</h2>
             <ul>
-                ${articles.map((key) => `<li><a href="${window.location.origin}/${key}">/${key}</a></li>`)}
+                ${articles.map((article) => `<li><a href="${article.path}">${article.title}</a></li>`)}
             </ul>
             `;
-
-            savedArticles.innerHTML = template;
-
-        });
-
+        }
     </script>
 </body>
 </html>
