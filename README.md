@@ -4,9 +4,7 @@
 
 ## The Video Series
 
-You can watch how this application was made by following along with the video series.
-
-[**Clone the Start Branch**](https://github.com/ireade/simply-notify/tree/start) to get started.
+This video series is about how I made this blog "offline-first". You can see my process by following along with the video series:
 
 <table>
   <tbody>
@@ -16,7 +14,7 @@ You can watch how this application was made by following along with the video se
         <a href="https://www.youtube.com/watch?v=XdzXaW8IbBM">
           <img width="290" alt="" src="http://bitsofco.de/content/images/2017/09/Thumbnail-1.png">
           <br>
-          Introduction & Firebase Setup
+          Introduction & Ghost Theme Setup
         </a>
       </td>
       <!-- Video 2 -->
@@ -24,7 +22,7 @@ You can watch how this application was made by following along with the video se
         <a href="https://www.youtube.com/watch?v=cnwuYeCqni0">
           <img width="290" alt="" src="http://bitsofco.de/content/images/2017/09/Thumbnail-2.png">
           <br>
-          Authentication
+          Saving Pages to Cache Storage
         </a>
       </td>
       <!-- Video 3 -->
@@ -32,7 +30,7 @@ You can watch how this application was made by following along with the video se
         <a href="https://www.youtube.com/watch?v=a50fz6oiLCQ">
           <img width="290" alt="" src="http://bitsofco.de/content/images/2017/09/Thumbnail-3.png">
           <br>
-          Notification Subscriptions
+          Creating an Offline Page
         </a>
       </td>
     </tr>
@@ -42,7 +40,7 @@ You can watch how this application was made by following along with the video se
         <a href="https://www.youtube.com/watch?v=YCMtarwgNIo">
           <img width="290" alt="" src="http://bitsofco.de/content/images/2017/09/Thumbnail-4.png">
           <br>
-          Creating & Saving Messages
+          Service Worker & Serving Offline Pages
         </a>
       </td>
       <!-- Video 5 -->
@@ -50,7 +48,7 @@ You can watch how this application was made by following along with the video se
         <a href="https://www.youtube.com/watch?v=rumJsnHbXsI">
           <img width="290" alt="" src="http://bitsofco.de/content/images/2017/09/Thumbnail-5.png">
           <br>
-          Sending Web Notifications
+          Handling Assets while Offline
         </a>
       </td>
       <!-- Video 6 -->
