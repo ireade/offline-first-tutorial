@@ -28,7 +28,7 @@ This video series is about how I made this blog "offline-first". You can see my 
       <!-- Video 3 -->
       <td align="center">
         <a href="">
-          <img width="290" alt="" src="hhttps://user-images.githubusercontent.com/8677283/49376940-b98ebc00-f700-11e8-98c3-bb037f075761.png">
+          <img width="290" alt="" src="https://user-images.githubusercontent.com/8677283/49376940-b98ebc00-f700-11e8-98c3-bb037f075761.png">
           <br>
           Creating an Offline Page
         </a>
