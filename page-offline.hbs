@@ -81,7 +81,7 @@
                 if (key.includes("article-")) articles.push(key.split("article-")[1]);
             })
 
-            if (articles.length == 0) return savedArticles.innerHTML("<p>No articles were found :(</p>");
+            if (articles.length == 0) return savedArticles.innerHTML = "<p>No articles were found :(</p>";
 
             const template = `
             <h2>${articles.length} saved articles</h2>
